@@ -19,9 +19,11 @@ from django.contrib import admin
 
 from timestamp_microservice.views import parse_unix
 from timestamp_microservice.views import parse_natural
+from req_header_parser_microservice.views import parse_header
 
 urlpatterns = [
     url(r'^api/timestamp-microservice/(?P<unix>[0-9]+)/$', parse_unix.as_view(), name='parse_unix'),
     url(r'^api/timestamp-microservice/(?P<natural>.+)/$', parse_natural.as_view(), name='parse_natural'),
+    url(r'^api/request-header-parser-microservice/$', parse_header.as_view(), name='parse_header'),
     url(r'^admin/', admin.site.urls),
 ]
