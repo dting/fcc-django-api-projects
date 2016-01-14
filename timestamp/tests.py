@@ -3,7 +3,7 @@ from django.test import Client
 
 from django.core.urlresolvers import reverse
 
-class TimestampMicroserviceTest(TestCase):
+class TimestampTest(TestCase):
         
     def test_unix_timestamp_req_returns_epoch_and_natural_result(self):
         client = Client()

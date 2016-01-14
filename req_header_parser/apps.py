@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 
 class ReqHeaderParserMicroserviceConfig(AppConfig):
-    name = 'req_header_parser_microservice'
+    name = 'req_header_parser'

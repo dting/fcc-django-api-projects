@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'timestamp_microservice',
-    'req_header_parser_microservice'
+    'timestamp',
+    'req_header_parser'
 ]
 
 MIDDLEWARE_CLASSES = [
