@@ -20,11 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 's-)e3ca(jg(o+^v!l!#p=49(t(2^pvy2y6q97ne_v=4*mvosa('
+SECRET_KEY = os.environ.get('SECRET_KEY', 'application-secret')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.environ.get('DEBUG', True))
 
 ALLOWED_HOSTS = []
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -41,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'timestamp',
     'req_header_parser',
-    'url_shortener'
+    'url_shortener',
+    'image_search'
 ]
 
 MIDDLEWARE_CLASSES = [
