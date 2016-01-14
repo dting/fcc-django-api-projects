@@ -4,9 +4,8 @@ from django.http import JsonResponse
 from datetime import datetime
 from calendar import timegm
 
-err_res = {'unix': None, 'natural': None}
-
 class parse_unix(View):
+    err_res = {'unix': None, 'natural': None}
     def get(self, request, unix):
         res = {}
         try:
@@ -14,10 +13,11 @@ class parse_unix(View):
             res['unix'] = int(unix)
             res['natural'] = utc_dt.strftime("%B %d, %Y")
         except ValueError:
-            res = err_res;
+            res = self.err_res;
         return JsonResponse(res)
         
 class parse_natural(View):
+    err_res = {'unix': None, 'natural': None}
     def get(self, request, natural):
         res = {}
         try:
@@ -25,5 +25,5 @@ class parse_natural(View):
             res['unix'] = int(timegm(d.timetuple()))
             res['natural'] = natural
         except ValueError:
-            res = err_res;
+            res = self.err_res;
         return JsonResponse(res)

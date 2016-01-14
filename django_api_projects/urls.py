@@ -22,5 +22,6 @@ from req_header_parser.views import parse_header
 urlpatterns = [
     url(r'^api/timestamp/', include('timestamp.urls')),
     url(r'^api/request-header-parser/$', parse_header.as_view(), name='parse_header'),
+    url(r'^api/url-shortener/', include('url_shortener.urls')),
     url(r'^admin/', admin.site.urls),
 ]

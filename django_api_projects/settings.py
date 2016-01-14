@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'timestamp',
-    'req_header_parser'
+    'req_header_parser',
+    'url_shortener'
 ]
 
 MIDDLEWARE_CLASSES = [
