@@ -18,9 +18,10 @@ access your application from 'https://django-api-projects-dting.c9users.io/' and
 
 In case you want to run your Django application from the terminal just run:
 
-1) Run syncdb command to sync models to database and create Django's default superuser and auth system
+1) Run migrate command to sync models to database and create Django's default superuser and auth system
 
-    $ python workspace/manage.py syncdb
+    $ python workspace/manage.py migrate
+    $ python workspace/manage.py createsuperuser
 
 2) Run Django
 
