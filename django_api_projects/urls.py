@@ -1,6 +1,5 @@
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.views.generic import TemplateView
 
 from req_header_parser.views import parse_header
 from file_metadata.views import upload_file
