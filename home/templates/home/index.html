@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>FreeCodeCamp Django API projects</title>         
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.0/js.cookie.min.js"></script>
+</head>
+<body>
+    <h1>FreeCodeCamp Django API projects</h1>
+    {% include "file_metadata/file_metadata.html" %}
+    {% load static from staticfiles %}
+    <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/file_metadata.js' %}"></script>
+</body>
+</html>

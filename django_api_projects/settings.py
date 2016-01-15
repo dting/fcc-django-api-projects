@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'timestamp',
     'req_header_parser',
     'url_shortener',
-    'image_search'
+    'image_search',
+    'file_metadata',
+    'home'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -122,7 +124,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
