@@ -18,7 +18,7 @@ class search(View):
     def get(self, request, terms):
         url = search_url + urllib.quote(terms, safe="%/:=&?~#+!$,;'@()*[]")
         start = request.GET.get('offset')
-        if start and start.isdigit():
+        if start and start.isdigit() and int(start) > 0:
             url += '&start={}'.format(start)
         
         response = urllib2.urlopen(url, None, 2000)

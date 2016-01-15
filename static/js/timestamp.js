@@ -7,7 +7,7 @@ $('#timestamp-form').submit(function(e) {
     jqxhr.done(function(res) {
         $('#timestamp-output').html('<pre>' + JSON.stringify(res, null, 2) + '</pre>');
     });
-    jqxhr.fail(function( jqxhr, textStatus, error ) {
+    jqxhr.fail(function(jqxhr, textStatus, error) {
         $('#timestamp-output').html('<pre>' + textStatus + '</pre>');
     });
 });
