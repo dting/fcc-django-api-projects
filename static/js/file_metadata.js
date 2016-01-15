@@ -1,24 +1,9 @@
 "use strict"
 
-var csrftoken = Cookies.get('csrftoken');
-
-function csrfSafeMethod(method) {
-    // these HTTP methods do not require CSRF protection
-    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-}
-
-$.ajaxSetup({
-    beforeSend: function(xhr, settings) {
-        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-            xhr.setRequestHeader("X-CSRFToken", csrftoken);
-        }
-    }
-});
-
 function toggleStatus() {
-    var status = $('#status');
+    var status = $('#file-metadata-status');
     if (status.html() === 'ready') {
-        $('#metadata').html('');
+        $('#file-metadata-output').html('');
         $('input[type=submit]').prop('disabled', true);
         status.html('uploading');
     }
@@ -28,7 +13,7 @@ function toggleStatus() {
     }
 }
 
-$('#form').submit(function(e) {
+$('#file-metadata-form').submit(function(e) {
     e.preventDefault();
     e.stopPropagation();
     toggleStatus();
@@ -39,14 +24,14 @@ $('#form').submit(function(e) {
         processData: false,
         contentType: false,
         success: function(res) {
-            $('#metadata').html('<pre>' + JSON.stringify(res, null, 2) + '</pre>');
-            $('#form').closest('form').get(0).reset();
+            $('#file-metadata-output').html('<pre>' + JSON.stringify(res, null, 2) + '</pre>');
+            $('#file-metadata-form').closest('form').get(0).reset();
         },
         error: function(jqXHR, textStatus, errorThrown) {
-            $('#metadata').prepend('<pre>' + textStatus + '</pre>');
+            $('#file-metadata-output').html('<pre>' + textStatus + '</pre>');
         },
         complete: function() {
             toggleStatus();
         }
     });
-})
+});
