@@ -1,9 +1,10 @@
-from django.shortcuts import render
 from django.http import JsonResponse
 
 from file_metadata.forms import UploadFileForm
 
 def upload_file(request):
+    """This POST is safe since it causes no changes and file is discarded."""
+    
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():

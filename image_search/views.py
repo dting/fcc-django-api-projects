@@ -5,7 +5,8 @@ from django.core import serializers
 from image_search.models import Search
 
 import os
-import urllib, urllib2
+from urllib.request import urlopen
+from urllib.parse import quote
 import json
 
 base_url = 'https://www.googleapis.com/customsearch/v1' 
@@ -16,15 +17,15 @@ search_url = (base_url + '?searchType=image&key={}&cx={}&q=').format(
 
 class search(View):
     def get(self, request, terms):
-        url = search_url + urllib.quote(terms, safe="%/:=&?~#+!$,;'@()*[]")
+        url = search_url + quote(terms, safe="%/:=&?~#+!$,;'@()*[]")
         start = request.GET.get('offset')
         if start and start.isdigit() and int(start) > 0:
             url += '&start={}'.format(start)
         
-        response = urllib2.urlopen(url, None, 2000)
+        response = urlopen(url)
         if response.getcode() != 200:
             return JsonResponse({'error': response.getcode()})
-        data = json.load(response)
+        data = json.loads(response.read())
         res = []
         for item in data['items']:
             res.append({

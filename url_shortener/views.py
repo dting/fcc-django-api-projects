@@ -16,7 +16,7 @@ class shorten_url(View):
         url_validator = URLValidator()
         try:
             url_validator(long_url)
-        except ValidationError, e:
+        except ValidationError as e:
             print("shorten_url error: {}".format(e))
             return JsonResponse({'error': 'URL invalid'})
         s = ShortUrl.objects.create(long_url=long_url)
@@ -37,7 +37,7 @@ class lengthen_url(View):
     def get(self, request, short_url):
         try:
             s = ShortUrl.objects.get(pk=self.short_url_to_id(short_url))
-        except (ValueError, ShortUrl.DoesNotExist), e:
+        except (ValueError, ShortUrl.DoesNotExist) as e:
             print("lengthen_url error: {}".format(e))
             return JsonResponse({'error': 'No short url found for given input'})
         return redirect(s.long_url)
