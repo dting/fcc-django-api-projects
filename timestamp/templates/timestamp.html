@@ -1,4 +1,5 @@
-<div id="timestamp">
+<div class="col-xs-12 col-sm-12 col-sm-10">
+    <div id="timestamp">
     <h2>Timestamp Microservice <a href="http://www.freecodecamp.com/challenges/basejump-timestamp-microservice" target="_blank">(FCC link)</a></h2>
     <div>
         <b>User stories:</b>
@@ -19,10 +20,14 @@
     <div>
         <b>Try:</b>
         <p>Enter unix timestamp, human readable date, or an invalid query</p>
-        <form id="timestamp-form">
-            <input id="timestamp-input" type="text" value="1450137600" required>
-            <input type="submit">
+        <form id="timestamp-form" class="form-inline">
+            <div class="form-group">
+                <label for="timestamp-input">Timestamp Input</label>
+                <input type="text" id="timestamp-input" class="form-control" value="1450137600" required/>
+            </div>
+            <input type="submit" class="btn btn-default">
         </form>
         <div id="timestamp-output"></div>
     </div>
+</div>
 </div>
