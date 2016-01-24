@@ -56,5 +56,5 @@
     
 11. Run server:  
     ```
-    $ python manage.py runserver $PORT:$IP
+    $ python manage.py runserver $IP:$PORT
     ```
