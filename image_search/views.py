@@ -27,13 +27,14 @@ class search(View):
             return JsonResponse({'error': response.getcode()})
         data = json.loads(response.read().decode('utf-8'))
         res = []
-        for item in data['items']:
-            res.append({
-                'url': item['link'],
-                'snippet': item['snippet'],
-                'thumbnail': item['image']['thumbnailLink'],
-                'context': item['image']['contextLink']
-            })
+        if 'items' in data:
+            for item in data['items']:
+                res.append({
+                    'url': item['link'],
+                    'snippet': item['snippet'],
+                    'thumbnail': item['image']['thumbnailLink'],
+                    'context': item['image']['contextLink']
+                })
             
         Search.objects.create(terms=terms)
         return JsonResponse(res, safe=False)
