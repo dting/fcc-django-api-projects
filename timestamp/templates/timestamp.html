@@ -1,33 +1,29 @@
-<div class="col-xs-12 col-sm-12 col-sm-10">
-    <div id="timestamp">
-    <h2>Timestamp Microservice <a href="http://www.freecodecamp.com/challenges/basejump-timestamp-microservice" target="_blank">(FCC link)</a></h2>
-    <div>
-        <b>User stories:</b>
-        <ol>
-            <li>I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: December 15, 2015)</li>
-            <li>If it does, it returns both the Unix timestamp and the natural language form of that date.</li>
-            <li>If it does not contain a date or Unix timestamp, it returns null for those properties.</li>
-        </ol>
-    </div>
-    <div>
-        <b>Examples:</b>
-        <ul>
-            <li><a href="/api/timestamp/December%2015,%202015">https://{{ site }}/api/timestamp/December%2015,%202015</a></li>
-            <li><a href="/api/timestamp/1450137600">https://{{ site }}/api/timestamp/1450137600</a> </li>
-        </ul>
-        <pre>{ "unix": 1450137600, "natural": "December 15, 2015" }</pre>
-    </div>
-    <div>
-        <b>Try:</b>
-        <p>Enter unix timestamp, human readable date, or an invalid query</p>
-        <form id="timestamp-form" class="form-inline">
-            <div class="form-group">
-                <label for="timestamp-input">Timestamp Input</label>
-                <input type="text" id="timestamp-input" class="form-control" value="1450137600" required/>
-            </div>
-            <input type="submit" id="timestampSubmit" class="btn btn-default">
-        </form>
-        <div id="timestamp-output"></div>
-    </div>
+<h2>Timestamp Microservice <a href="http://www.freecodecamp.com/challenges/basejump-timestamp-microservice" target="_blank">(FCC link)</a></h2>
+<div>
+    <b>User stories:</b>
+    <ol>
+        <li>I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: December 15, 2015)</li>
+        <li>If it does, it returns both the Unix timestamp and the natural language form of that date.</li>
+        <li>If it does not contain a date or Unix timestamp, it returns null for those properties.</li>
+    </ol>
 </div>
+<div>
+    <b>Examples:</b>
+    <ul>
+        <li><a href="/api/timestamp/December%2015,%202015">https://{{ site }}/api/timestamp/December%2015,%202015</a></li>
+        <li><a href="/api/timestamp/1450137600">https://{{ site }}/api/timestamp/1450137600</a> </li>
+    </ul>
+    <pre>{ "unix": 1450137600, "natural": "December 15, 2015" }</pre>
+</div>
+<div>
+    <b>Try:</b>
+    <p>Enter unix timestamp, human readable date, or an invalid query</p>
+    <form id="timestamp-form" class="form-inline">
+        <div class="form-group">
+            <label for="timestamp-input">Timestamp Input</label>
+            <input type="text" id="timestamp-input" class="form-control" value="1450137600" required/>
+        </div>
+        <input type="submit" id="timestampSubmit" class="btn btn-default">
+    </form>
+    <div id="timestamp-output"></div>
 </div>

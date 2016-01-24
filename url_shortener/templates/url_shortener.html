@@ -1,36 +1,28 @@
-<div class="col-xs-12 col-sm-12 col-sm-10">
-    <div id="url-shortener">
-        <h2>Url Shortener Microservice <a href="http://www.freecodecamp.com/challenges/basejump-url-shortener-microservice" target="_blank">(FCC link)</a></h2>
-        <div>
-            <b>User stories:</b>
-            <ol>
-                <li>I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.</li>
-                <li>When I visit that shortened URL, it will redirect me to my original link.</li>
-            </ol>
-        </div>
-        <div>
-            <b>Example creation:</b>
-            <ul>
-                <li><a href="/api/url-shortener/new/http://freecodecamp.com/news">https://{{ site }}/api/url-shortener/new/http://freecodecamp.com/news</a></li>
-            </ul>
-            <pre>
-                {
-                    original_url: "http://freecodecamp.com/news",
-                    short_url: "https://{{ site }}/api/url-shortener/V/"
-                }
-            </pre>
-        </div>
-        <div>
-            <b>Example usage:</b>
-            <ul>
-                <li><a href="/api/url-shortener/V/">https://{{ site }}/api/url-shortener/V/</a></li>
-            </ul>
-            <b>Redirects to:</b>
-            <ul>
-                <li><a href="http://freecodecamp.com/news">http://freecodecamp.com/news</a>
-                    <br>
-                </li>
-            </ul>
-        </div>
-    </div>
+<h2>Url Shortener Microservice <a href="http://www.freecodecamp.com/challenges/basejump-url-shortener-microservice" target="_blank">(FCC link)</a></h2>
+<div>
+    <b>User stories:</b>
+    <ol>
+        <li>I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.</li>
+        <li>When I visit that shortened URL, it will redirect me to my original link.</li>
+    </ol>
+</div>
+<div>
+    <b>Example creation:</b>
+    <ul>
+        <li><a href="/api/url-shortener/new/http://freecodecamp.com/news">https://{{ site }}/api/url-shortener/new/http://freecodecamp.com/news</a></li>
+    </ul>
+    <pre>{
+    original_url: "http://freecodecamp.com/news",
+    short_url: "https://{{ site }}/api/url-shortener/V/"
+}</pre>
+</div>
+<div>
+    <b>Example usage:</b>
+    <ul>
+        <li><a href="/api/url-shortener/V/">https://{{ site }}/api/url-shortener/V/</a></li>
+    </ul>
+    <b>Redirects to:</b>
+    <ul>
+        <li><a href="http://freecodecamp.com/news">http://freecodecamp.com/news</a></li>
+    </ul>
 </div>
