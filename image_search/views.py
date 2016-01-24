@@ -25,7 +25,7 @@ class search(View):
         response = urlopen(url)
         if response.getcode() != 200:
             return JsonResponse({'error': response.getcode()})
-        data = json.loads(response.read())
+        data = json.loads(response.read().decode('utf-8'))
         res = []
         for item in data['items']:
             res.append({
